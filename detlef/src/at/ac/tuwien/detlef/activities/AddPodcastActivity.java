@@ -174,7 +174,8 @@ public class AddPodcastActivity extends Activity {
 
         @Override
         public void onReceiveResult(int resultCode, Bundle resultData) {
-            Log.d(TAG, "Got result back!");
+            List<Podcast> podcasts = resultData.getParcelableArrayList(PodderIntentService.EXTRA_RESULT_PODCAST_LIST);
+            Log.d(TAG, String.format("Got results back: %s", podcasts));
         }
 
     }
